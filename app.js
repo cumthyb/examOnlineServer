@@ -13,10 +13,10 @@ readLoacalFile(examJsonPath)
 app.use(async (ctx, next) => {
   ctx.set({
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
+    'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE,OPTIONS',
     'Access-Control-Allow-Headers': 'content-type,content-length'
   })
-  next();
+ await  next();
 });
 
 app.use(koaBody())

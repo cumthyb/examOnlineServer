@@ -1,6 +1,6 @@
 /*
  * @LastEditors: hongyongbo
- * @LastEditTime: 2020-03-21 19:00:53
+ * @LastEditTime: 2020-03-21 22:39:52
  * @Description: 
  * @Notice: 
  */
@@ -8,7 +8,7 @@
 const Router = require('koa-router');
 
 const { addQuestion, deleteQuestion, updateQuestion, getQuestionsWithType } = require('./controls/questions')
-const { getPaper } = require('./controls/paper')
+const { getPaper, calScore } = require('./controls/paper')
 
 
 exports.createRouter = function () {
@@ -20,6 +20,7 @@ exports.createRouter = function () {
     .get('/examOnline/v1', getQuestionsWithType)
 
   router.get('/papers/v1', getPaper)
-
+    .post('/papers/v1', calScore)
+    
   return router;
 }

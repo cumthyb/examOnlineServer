@@ -3,19 +3,19 @@
     "id": "question-15847746615544",
     "type": "single",
     "score": "100",
-    "questionDesc": "456",
+    "questionDesc": "测试题",
     "options": [
-      { "desc": "选项描述", "id": "option-1584774656021", "correct": false },
-      { "desc": "选项描述", "id": "option-1584774656668", "correct": false },
-      { "desc": "选项描述", "id": "option-1584774657158", "correct": false },
-      { "desc": "选项描述", "id": "option-1584774657876", "correct": true }
+      { "desc": "1", "id": "option-1584774656021", "correct": false },
+      { "desc": "true", "id": "option-1584774656668", "correct": true },
+      { "desc": "3", "id": "option-1584774657158", "correct": false },
+      { "desc": "true", "id": "option-1584774657876", "correct": true }
     ]
   },
   {
     "id": "question-1584774661554",
     "type": "multiple",
-    "score": "45000000000000000000000000000000000000",
-    "questionDesc": "78911111",
+    "score": "45",
+    "questionDesc": "测试",
     "options": [
       { "desc": "选项描述", "id": "option-1584774656021", "correct": true },
       { "desc": "选项描述", "id": "option-1584774656668", "correct": true },
@@ -26,8 +26,331 @@
   {
     "id": "question-1584781692333",
     "type": "qa",
-    "score": "1000000000000000000",
-    "questionDesc": "2323",
+    "score": "20",
+    "questionDesc": "测试",
+    "answer": "20",
     "options": []
+  },
+  {
+    "id": "question-1584803777473",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "《史记》是一部",
+    "options": [
+      { "desc": "编年体通史", "id": "option-1584803744759", "correct": false },
+      {
+        "desc": "编年体断代史",
+        "id": "option-1584803751349",
+        "correct": false
+      },
+      { "desc": "纪传体通史", "id": "option-1584803757914", "correct": true },
+      { "desc": "纪传体断代史", "id": "option-1584803762350", "correct": false }
+    ]
+  },
+  {
+    "id": "question-1584803845150",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "郭沫若曾创作话剧《__________》，刻画了一位曹操平定中原后重金赎回的文学家，作有著名的琴曲歌辞《胡笳十八拍》。",
+    "options": [
+      { "desc": "李清照 ", "id": "option-1584803792056", "correct": false },
+      { "desc": "蔡文姬 ", "id": "option-1584803812618", "correct": false },
+      { "desc": "谢道韫", "id": "option-1584803816544", "correct": true },
+      { "desc": "王昭君", "id": "option-1584803824099", "correct": false }
+    ]
+  },
+  {
+    "id": "question-1584803894551",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "古代有以职业为姓的现象，下列不属于以职业为姓的是（ ）",
+    "options": [
+      { "desc": "师旷", "id": "option-1584803858714", "correct": false },
+      { "desc": "师旷", "id": "option-1584803866936", "correct": false },
+      { "desc": "轮扁", "id": "option-1584803872675", "correct": false },
+      { "desc": "乐毅", "id": "option-1584803884769", "correct": false }
+    ]
+  },
+  {
+    "id": "question-1584804059849",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "下列成语出处完全正确的一组是_________。①一日不见，如隔三秋 ②守株待兔 ③作壁上观 ④黔驴技穷 ",
+    "options": [
+      {
+        "desc": "①《三戒》 ②《史记》 ③《韩非子》 ④《诗经》",
+        "id": "option-1584803945676",
+        "correct": false
+      },
+      {
+        "desc": "①《韩非子》 ②《史记》 ③《诗经》 ④《三戒》 ",
+        "id": "option-1584803952414",
+        "correct": true
+      },
+      {
+        "desc": "①《史记》 ②《韩非子》 ③《三戒》 ④《诗经》",
+        "id": "option-1584803959788",
+        "correct": false
+      },
+      {
+        "desc": "①《诗经》 ②《韩非子》 ③《史记》 ④《三戒》",
+        "id": "option-1584803964782",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "question-1584804175607",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "中国古典文言短篇小说_________是蒲松龄的作品",
+    "options": [
+      {
+        "desc": "《儒林外史》",
+        "id": "option-1584804137289",
+        "correct": false
+      },
+      { "desc": "《聊斋志异》", "id": "option-1584804145610", "correct": true },
+      {
+        "desc": "《柳毅传书》",
+        "id": "option-1584804156963",
+        "correct": false
+      },
+      {
+        "desc": "《南柯太守传》",
+        "id": "option-1584804162502",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "question-1584804231945",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "下列词语中文言与现代汉语意义全不同的是_________。",
+    "options": [
+      {
+        "desc": ".感激 烈士 席卷",
+        "id": "option-1584804187518",
+        "correct": false
+      },
+      {
+        "desc": "卑鄙 囊括 然则",
+        "id": "option-1584804197068",
+        "correct": false
+      },
+      {
+        "desc": "交通 于是 妻子",
+        "id": "option-1584804207733",
+        "correct": true
+      },
+      {
+        "desc": "城池 江西 奉命 ",
+        "id": "option-1584804218566",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "question-1584804279218",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "中国传统用干支纪年，六十年一轮。  今年是乙酉年，去年是_________，梁启超曾在同一干支年撰写《三百年祭》。",
+    "options": [
+      { "desc": "甲申", "id": "option-1584804256879", "correct": true },
+      { "desc": "甲子", "id": "option-1584804263041", "correct": false },
+      { "desc": "丙子", "id": "option-1584804272151", "correct": false },
+      { "desc": "丙申", "id": "option-1584804273915", "correct": false }
+    ]
+  },
+  {
+    "id": "question-1584804315417",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "鲁直”是北宋著名文学家_________的字",
+    "options": [
+      { "desc": "苏轼", "id": "option-1584804293389", "correct": false },
+      { "desc": "王安石", "id": "option-1584804300335", "correct": false },
+      { "desc": "欧阳修", "id": "option-1584804305327", "correct": false },
+      { "desc": "黄庭坚", "id": "option-1584804310143", "correct": true }
+    ]
+  },
+  {
+    "id": "question-1584804358804",
+    "type": "single",
+    "score": "10",
+    "questionDesc": "《桃花源记》“黄发垂髫，并怡然自乐”，“黄发”指_________。",
+    "options": [
+      { "desc": "儿童", "id": "option-1584804329893", "correct": true },
+      { "desc": "少年", "id": "option-1584804335940", "correct": false },
+      { "desc": "青年 ", "id": "option-1584804340474", "correct": false },
+      { "desc": "老年", "id": "option-1584804345225", "correct": false }
+    ]
+  },
+  {
+    "id": "question-1584804560996",
+    "type": "multiple",
+    "score": "20",
+    "questionDesc": "商业银行设计发行的结构性理财产品，通常可与（    ）等挂钩",
+    "options": [
+      { "desc": "利率", "id": "option-1584804535069", "correct": true },
+      { "desc": "股票", "id": "option-1584804541220", "correct": true },
+      {
+        "desc": "商品期货指数     ",
+        "id": "option-1584804545155",
+        "correct": false
+      },
+      { "desc": "汇率        ", "id": "option-1584804549241", "correct": true },
+      { "desc": "股指", "id": "option-1584804552555", "correct": false }
+    ]
+  },
+  {
+    "id": "question-1584804622940",
+    "type": "multiple",
+    "score": "20",
+    "questionDesc": "守库员可接触的是（）",
+    "options": [
+      { "desc": "金库钥匙", "id": "option-1584804602838", "correct": true },
+      { "desc": "枪柜钥匙", "id": "option-1584804607180", "correct": true },
+      { "desc": "弹柜钥匙", "id": "option-1584804610989", "correct": true },
+      {
+        "desc": "执勤枪弹柜钥匙",
+        "id": "option-1584804614681",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "question-1584804661652",
+    "type": "multiple",
+    "score": "20",
+    "questionDesc": "对随身护卫对象可能到达的场所，制定方案前应进行详细的勘察，了解其（）等详细情况。",
+    "options": [
+      { "desc": "人员密度", "id": "option-1584804633011", "correct": false },
+      { "desc": "制高点", "id": "option-1584804640418", "correct": true },
+      { "desc": "交通状况", "id": "option-1584804644437", "correct": true },
+      {
+        "desc": "场所负责人情况",
+        "id": "option-1584804647929",
+        "correct": true
+      },
+      { "desc": "位置", "id": "option-1584804651501", "correct": false }
+    ]
+  },
+  {
+    "id": "question-1584804696588",
+    "type": "multiple",
+    "score": "20",
+    "questionDesc": "处置突发事件的方针是（）",
+    "options": [
+      {
+        "desc": "预防为主，严密防范",
+        "id": "option-1584804675857",
+        "correct": false
+      },
+      {
+        "desc": "统一指挥，各负其责",
+        "id": "option-1584804680384",
+        "correct": true
+      },
+      {
+        "desc": "快速反应，协同处置",
+        "id": "option-1584804684636",
+        "correct": true
+      },
+      {
+        "desc": "科学决策，依法处置",
+        "id": "option-1584804688140",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "question-1584804725459",
+    "type": "multiple",
+    "score": "20",
+    "questionDesc": "依法配备守护、押运公务用枪的单位违反枪支管理规定，有下列（）情形之一的对直接负责的主管人员和其他直接责任人员依法处分",
+    "options": [
+      {
+        "desc": "未建立或者未能有效执行持枪人员管理责任制度的",
+        "id": "option-1584804704660",
+        "correct": true
+      },
+      {
+        "desc": "使用枪支后，不报告公安机关的",
+        "id": "option-1584804709084",
+        "correct": true
+      },
+      {
+        "desc": "枪支、弹药被盗、被抢或者丢失，未及时报告公安机关的",
+        "id": "option-1584804712631",
+        "correct": true
+      },
+      {
+        "desc": "不按照规定审验枪支的",
+        "id": "option-1584804716039",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "question-1584804760401",
+    "type": "multiple",
+    "score": "20",
+    "questionDesc": "持枪执行任务时，必须随身携带并持（）",
+    "options": [
+      { "desc": "上岗证", "id": "option-1584804739517", "correct": true },
+      { "desc": "持枪证", "id": "option-1584804743686", "correct": true },
+      { "desc": "身份证", "id": "option-1584804748751", "correct": true },
+      { "desc": "枪证", "id": "option-1584804754197", "correct": true }
+    ]
+  },
+  {
+    "id": "question-1584804830017",
+    "type": "qa",
+    "score": "10",
+    "questionDesc": "你喝完酒站在马路边上向大地怒吼，猜一动物",
+    "options": [],
+    "answer": "野兔"
+  },
+  {
+    "id": "question-1584804845560",
+    "type": "qa",
+    "score": "10",
+    "questionDesc": "狗让猫做饭---猜一动物",
+    "options": [],
+    "answer": "熊猫"
+  },
+  {
+    "id": "question-1584804867368",
+    "type": "qa",
+    "score": "10",
+    "questionDesc": "一只小狗经常不洗澡，为什么不生虱子？",
+    "options": [],
+    "answer": "狗只会生小狗狗"
+  },
+  {
+    "id": "question-1584804883300",
+    "type": "qa",
+    "score": "10",
+    "questionDesc": "大雁为什么要飞去南方过冬？",
+    "options": [],
+    "answer": "因为用走的太慢"
+  },
+  {
+    "id": "question-1584804900488",
+    "type": "qa",
+    "score": "10",
+    "questionDesc": "猴子每分钟能掰一个玉米，在果园里，一只猴子5分钟能掰几个玉米？",
+    "options": [],
+    "answer": "一个也没有，果园里没有玉米"
+  },
+  {
+    "id": "question-1584804912887",
+    "type": "qa",
+    "score": "10",
+    "questionDesc": "鱼缸里有十条鱼，死掉了一条问还有几条？",
+    "options": [],
+    "answer": "十条，死鱼也是鱼"
   }
 ]
