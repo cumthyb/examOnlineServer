@@ -1,13 +1,20 @@
 /*
  * @LastEditors: hongyongbo
- * @LastEditTime: 2020-03-21 17:50:43
+ * @LastEditTime: 2020-03-22 08:13:48
  * @Description: 
  * @Notice: 
  */
 
 
-const path=require('path')
+const path = require('path')
 
-const examJsonPath = path.join(__dirname, 'questions.json')
+/**
+ * 试题json文件路径
+ */
+exports.examJsonPath = path.join(__dirname, 'questions.json')
 
-module.exports.examJsonPath= examJsonPath;
+
+/**
+ * 服务端口号
+ */
+exports.serverPort = 9000
