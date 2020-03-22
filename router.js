@@ -1,6 +1,6 @@
 /*
  * @LastEditors: hongyongbo
- * @LastEditTime: 2020-03-22 08:03:37
+ * @LastEditTime: 2020-03-23 05:57:51
  * @Description: 
  * @Notice: 
  */
@@ -12,7 +12,14 @@ const {
   updateQuestion,
   getQuestionsWithType
 } = require('./controls/questions')
-const { getPaper, calScore } = require('./controls/paper')
+
+const {
+  getPaper,
+  calScore,
+  storeQAPaper,
+  getQAPaper,
+  calQAScore
+} = require('./controls/paper')
 
 
 exports.createRouter = function () {
@@ -27,6 +34,10 @@ exports.createRouter = function () {
   router
     .get('/papers/v1', getPaper)
     .post('/papers/v1', calScore)
+    .post('/papersQA/v1', storeQAPaper)
+    .post('/scoreQA/v1', calQAScore)
+    .get('/papersQA/v1', getQAPaper)
+    
 
   return router;
 }

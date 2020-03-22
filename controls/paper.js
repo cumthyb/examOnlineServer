@@ -1,22 +1,21 @@
 /*
  * @LastEditors: hongyongbo
- * @LastEditTime: 2020-03-22 00:15:52
+ * @LastEditTime: 2020-03-23 06:57:09
  * @Description: 
  * @Notice: 
  */
 
-
-const { examJsonPath } = require('../constant')
+const { papersJsonPath } = require('../constant')
+const { updateLocalFile, getUUID } = require('../utils')
 const cloneDeep = require('lodash.clonedeep');
-
 
 const getRandom = (arr, count) => {
   const getIndex = (len) => Math.floor(Math.random() * len)
   const res = []
-  for (var i = 0; i < count&& arr.length > 0; i++) {
+  for (var i = 0; i < count && arr.length > 0; i++) {
     var index = getIndex(arr.length)
     res.push(arr[index])
-    [arr[index], arr[arr.length - 1]] = [arr[arr.length - 1], arr[index]]
+    arr[index] = arr[arr.length - 1]
     arr.pop()
   }
   return res;
@@ -28,9 +27,18 @@ const getRandom = (arr, count) => {
  */
 exports.getPaper = async (ctx, next) => {
   try {
-    const questions = cloneDeep(global.questions)
+    const { type } = ctx.query
 
-    const random10=getRandom(questions,10)
+    var res = []
+    if (type === 'qa') {
+      res = global.questions.filter(item => item["type"] == 'qa')
+    } else {
+      res = global.questions.filter(item => item["type"] != 'qa')
+    }
+
+    const questions = cloneDeep(res)
+
+    const random10 = getRandom(questions, 10)
     // 过滤掉试题的答案
     random10.forEach(item => {
       delete item.answer
@@ -52,7 +60,7 @@ exports.getPaper = async (ctx, next) => {
 
 
 /**
- * 计算答题分数
+ * 计算选择题答题分数
  */
 exports.calScore = async (ctx, next) => {
   try {
@@ -81,4 +89,73 @@ exports.calScore = async (ctx, next) => {
   }
 
 
+}
+
+
+/**
+ * 存储问答题
+ */
+exports.storeQAPaper = async (ctx, next) => {
+  try {
+
+    let paperObj = JSON.parse(ctx.request.rawBody)
+
+    let { questions, stName } = paperObj
+
+    let res = questions.map(item => {
+      var { id, type, answer, questionDesc } = item
+      return { id, type, answer, questionDesc }
+    })
+
+    global.papers.push({
+      id: getUUID(),
+      stName,
+      commitTime: Date.now(),
+      questions: res
+    })
+
+
+    await updateLocalFile(papersJsonPath, global.papers)
+
+    ctx.status = 200;
+    ctx.res.end('Success');
+
+  } catch (error) {
+    ctx.status = 500;
+    ctx.res.end(error);
+  }
+}
+
+
+/**
+ * 问答题试卷
+ */
+exports.getQAPaper = (ctx, next) => {
+  let res = []
+  let { id } = ctx.query
+  if (id) {
+    res = global.papers.filter(item => item.id === id)
+  } else {
+    res = global.papers
+  }
+  ctx.status = 200;
+  ctx.res.end(JSON.stringify(res))
+}
+
+exports.calQAScore = async (ctx, next) => {
+
+  let paperObj = JSON.parse(ctx.request.rawBody)
+
+
+  let sum=paperObj.questions.reduce((sum,item)=>sum+=(item.score||0),0)
+
+  paperObj.score=sum
+
+  let paper=global.papers.filter(item=>item.id===paperObj.id)[0]
+  paper.score=sum
+  paper.correctTime=Date.now()
+  await updateLocalFile(papersJsonPath, global.papers)
+
+  ctx.status = 200;
+  ctx.res.end(sum.toString())
 }

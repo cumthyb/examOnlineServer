@@ -1,12 +1,12 @@
 /*
  * @LastEditors: hongyongbo
- * @LastEditTime: 2020-03-22 08:06:12
+ * @LastEditTime: 2020-03-22 17:19:48
  * @Description: 
  * @Notice: 
  */
 
-const fs=require('fs-extra')
-
+const fs = require('fs-extra')
+const uuid = require('uuid')
 
 /**
  *
@@ -14,19 +14,23 @@ const fs=require('fs-extra')
  * @param {*} filePath
  */
 const readLoacalFile = (filePath) => {
-  fs.readFile(filePath, function (err, data) {
-    if (err) {
-      return console.error(err);
-    }
-    var questions = data.toString();//将二进制的数据转换为字符串
-    if (!questions) {
-      questions = []
-    }
-    else {
-      questions = JSON.parse(questions);//将字符串转换为json对象
-    }
-    global.questions = questions
+  return new Promise((resolve, reject) => {
+    fs.readFile(filePath, function (err, data) {
+      if (err) {
+        return console.error(err);
+      }
+      var arrStr = data.toString();//将二进制的数据转换为字符串
+      var arr = []
+      if (!arrStr) {
+        arr = []
+      }
+      else {
+        arr = JSON.parse(arrStr);//将字符串转换为json对象
+      }
+      resolve(arr)
+    })
   })
+
 }
 
 
@@ -52,7 +56,14 @@ const updateLocalFile = (filePath, list) => {
 }
 
 
-module.exports ={
+
+const getUUID = () => {
+  return uuid.v1()
+}
+
+
+module.exports = {
   updateLocalFile,
-  readLoacalFile
+  readLoacalFile,
+  getUUID
 }

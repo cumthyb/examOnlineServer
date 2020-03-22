@@ -2,13 +2,20 @@ const Koa = require('koa');
 const koaBody = require('koa-bodyparser');
 const { createRouter } = require('./router')
 const { readLoacalFile } = require('./utils')
-const { examJsonPath,serverPort } = require('./constant')
+const { examJsonPath,papersJsonPath,serverPort } = require('./constant')
 
 const app = new Koa();
 const router = createRouter()
 
-global.questions = []
-readLoacalFile(examJsonPath)
+global.questions= []
+global.papers=[]
+
+readLoacalFile(examJsonPath).then(data=>{
+  global.questions=data
+})
+readLoacalFile(papersJsonPath).then(data=>{
+  global.papers=data
+})
 
 
 /**
