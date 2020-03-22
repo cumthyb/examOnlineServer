@@ -15,6 +15,7 @@ node app.js
 
 ## 文件目录
 
+```
 ├── API.md  // 接口文档
 ├── app.js 
 ├── constant.js
@@ -28,7 +29,7 @@ node app.js
 ├── router.js // 路由表
 ├── utils.js
 └── yarn.lock
-
+```
 
 
 ## 项目接口 详见API.md
