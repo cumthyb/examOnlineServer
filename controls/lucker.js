@@ -25,15 +25,15 @@ const getRandom = (arr, count) => {
  * 获取所有试题
  * TODO:随机抽取
  */
-exports.getPaper = async (ctx, next) => {
+exports.getLucker = async (ctx, next) => {
   try {
     const { type } = ctx.query
 
     var res = []
     if (type === 'qa') {
-      res = global.questions.filter(item => item["type"] == 'qa')
+      res = global.users.filter(item => item["type"] == 'qa')
     } else {
-      res = global.questions.filter(item => item["type"] != 'qa')
+      res = global.users.filter(item => item["type"] != 'qa')
     }
 
     const questions = cloneDeep(res)
@@ -67,7 +67,7 @@ exports.calScore = async (ctx, next) => {
     let answers = JSON.parse(ctx.request.rawBody)
     let totalScore = 0;
     answers.forEach(item => {
-      var question = global.questions.filter(q => q.id === item.id)[0]
+      var question = global.users.filter(q => q.id === item.id)[0]
       var _answers = []
       question.options.map((opt, index) => {
         if (opt.correct) {
@@ -107,7 +107,7 @@ exports.storeQAPaper = async (ctx, next) => {
       return { id, type, answer, questionDesc }
     })
 
-    global.papers.push({
+    global.luckers.push({
       id: getUUID(),
       stName,
       commitTime: Date.now(),
@@ -115,7 +115,7 @@ exports.storeQAPaper = async (ctx, next) => {
     })
 
 
-    await updateLocalFile(papersJsonPath, global.papers)
+    await updateLocalFile(papersJsonPath, global.luckers)
 
     ctx.status = 200;
     ctx.res.end('Success');
@@ -134,9 +134,9 @@ exports.getQAPaper = (ctx, next) => {
   let res = []
   let { id } = ctx.query
   if (id) {
-    res = global.papers.filter(item => item.id === id)
+    res = global.luckers.filter(item => item.id === id)
   } else {
-    res = global.papers
+    res = global.luckers
   }
   ctx.status = 200;
   ctx.res.end(JSON.stringify(res))
@@ -147,14 +147,14 @@ exports.calQAScore = async (ctx, next) => {
   let paperObj = JSON.parse(ctx.request.rawBody)
 
 
-  let sum=paperObj.questions.reduce((sum,item)=>sum+=(item.score||0),0)
+  let sum=paperObj.users.reduce((sum,item)=>sum+=(item.score||0),0)
 
   paperObj.score=sum
 
-  let paper=global.papers.filter(item=>item.id===paperObj.id)[0]
+  let paper=global.luckers.filter(item=>item.id===paperObj.id)[0]
   paper.score=sum
   paper.correctTime=Date.now()
-  await updateLocalFile(papersJsonPath, global.papers)
+  await updateLocalFile(papersJsonPath, global.luckers)
 
   ctx.status = 200;
   ctx.res.end(sum.toString())

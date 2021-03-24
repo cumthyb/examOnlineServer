@@ -11,10 +11,10 @@ const path = require('path')
 /**
  * 试题json文件路径
  */
-exports.examJsonPath = path.join(__dirname, 'questions.json')
+exports.usersJsonPath = path.join(__dirname, 'db','users.json')
 
 
-exports.papersJsonPath = path.join(__dirname, 'papers.json')
+exports.luckersJsonPath = path.join(__dirname,'db', 'luckers.json')
 
 
 

@@ -7,36 +7,36 @@
 
 const Router = require('koa-router');
 const {
-  addQuestion,
-  deleteQuestion,
-  updateQuestion,
-  getQuestionsWithType
-} = require('./controls/questions')
+  addUser,
+  deleteUser,
+  // updateUser,
+  getUsers
+} = require('./controls/user')
 
 const {
-  getPaper,
-  calScore,
-  storeQAPaper,
-  getQAPaper,
-  calQAScore
-} = require('./controls/paper')
+  getLucker,
+  // calScore,
+  // storeQAPaper,
+  // getQAPaper,
+  // calQAScore
+} = require('./controls/lucker')
 
 
 exports.createRouter = function () {
   const router = new Router();
 
   router
-    .post('/examOnline/v1', addQuestion)
-    .delete('/examOnline/v1', deleteQuestion)
-    .put('/examOnline/v1', updateQuestion)
-    .get('/examOnline/v1', getQuestionsWithType)
+    .post('/participants/v1', addUser)
+    .delete('/participants/v1', deleteUser)
+    // .put('/participants/v1', updateUser)
+    .get('/participants/v1', getUsers)
 
   router
-    .get('/papers/v1', getPaper)
-    .post('/papers/v1', calScore)
-    .post('/papersQA/v1', storeQAPaper)
-    .post('/scoreQA/v1', calQAScore)
-    .get('/papersQA/v1', getQAPaper)
+    .get('/luckers/v1', getLucker)
+    // .post('/luckers/v1', calScore)
+    // .post('/luckers/v1', storeQAPaper)
+    // .post('/luckers/v1', calQAScore)
+    // .get('/luckers/v1', getQAPaper)
     
 
   return router;
