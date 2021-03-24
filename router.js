@@ -10,7 +10,8 @@ const {
   addUser,
   deleteUser,
   // updateUser,
-  getUsers
+  getUsers,
+  login
 } = require('./controls/user')
 
 const {
@@ -30,6 +31,7 @@ exports.createRouter = function () {
     .delete('/participants/v1', deleteUser)
     // .put('/participants/v1', updateUser)
     .get('/participants/v1', getUsers)
+    .post('/login/v1', login)
 
   router
     .get('/luckers/v1', getLucker)

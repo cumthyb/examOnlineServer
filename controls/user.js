@@ -96,3 +96,24 @@ exports.getUsers = async (ctx, next) => {
     next();
   }
 }
+
+
+exports.login = async (ctx, next) => {
+  try {
+    let { name, pwd } = JSON.parse(ctx.request.rawBody)
+    if (name === 'jw' && pwd === 'weijin') {
+      ctx.status = 200;
+      ctx.res.$$result = 'success';
+    } else {
+      ctx.status = 403;
+      ctx.res.$$result = 'invaild user';
+    }
+
+    next();
+
+  } catch (error) {
+    ctx.status = 500;
+    ctx.res.$$result = error;
+    next();
+  }
+}
