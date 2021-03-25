@@ -23,6 +23,21 @@ exports.addUser = async (ctx, next) => {
   }
 }
 
+exports.addUsers = async (ctx, next) => {
+  try {
+    let questionObj = JSON.parse(ctx.request.rawBody)
+    global.users=global.users.concat(questionObj.batchUsers)
+    await updateLocalFile(usersJsonPath, global.users)
+
+    ctx.status = 200;
+    ctx.res.$$result = 'success';
+    next();
+  } catch (error) {
+    ctx.status = 500;
+    ctx.res.$$result = error;
+    next();
+  }
+}
 
 exports.deleteUser = async (ctx, next) => {
   try {

@@ -8,6 +8,7 @@
 const Router = require('koa-router');
 const {
   addUser,
+  addUsers,
   deleteUser,
   // updateUser,
   getUsers,
@@ -28,6 +29,7 @@ exports.createRouter = function () {
 
   router
     .post('/participants/v1', addUser)
+    .post('/participants/v1/batch', addUsers)
     .delete('/participants/v1', deleteUser)
     // .put('/participants/v1', updateUser)
     .get('/participants/v1', getUsers)
